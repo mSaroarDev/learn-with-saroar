@@ -2,26 +2,75 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+/* styles/fonts.css */
+
+@font-face {
+    font-family: 'LiAdorNoirrit';
+    src: url("/fonts/Li-Ador-Noirrit-Regular.woff2") format('woff2');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
   }
-}
+  
+  @font-face {
+    font-family: 'LiAdorNoirritSemibold';
+    src: url('/fonts/Li-Ador-Noirrit-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+    font-style: semibold;
+  }
+  
+  @font-face {
+    font-family: 'LiAdorNoirritBold';
+    src: url('/fonts/Li-Ador-Noirrit-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+    font-style: bold;
+  }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+  @font-face {
+    font-family: 'HindSiliguri';
+    src: url('/fonts/Hind-Siliguri-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+  }
+  
+
+  main{
+    @apply w-full max-w-6xl mx-auto;
+  }
+
+  .active_link{
+    @apply text-brandColor;
+  }
+
+  .active_link {
+    position: relative;
+  }
+
+  .active_link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #1c784e; /* Set your preferred color */
+  }
+
+  .btn-brand{
+    @apply bg-brandColor text-white px-7 py-3 rounded-full hover:bg-brandColor/20 hover:text-brandColor duration-300 font-LiAdorNoirrit_Regular
+  }
+
+/* Initially hide the .on-hover class */
+/* .on-hover {
+  display: none;
+  transition: .4s all;
+} */
+
+/* Show the .on-hover class when the parent is hovered */
+/* .hover-it:hover .on-hover {
+  display: inline-block;
+} */
